@@ -1,0 +1,8 @@
+.auth_buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.auth_margen {
+    margin-right: 10px;
+}
