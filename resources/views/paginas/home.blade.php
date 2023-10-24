@@ -28,10 +28,10 @@
                 </ul>
                 <div class="auth_buttons">
                     <div class="auth_margen">
-                        <a class="nav-link active" aria-current="page" href="login">Iniciar Sesión</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Iniciar Sesión</a>
                     </div>
                     <div class="auth_margen">
-                        <a class="nav-link active" aria-current="page" href="registro">Registrarse</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('registro') }}">Registrarse</a>
                     </div>
                   </div>
             </div>
@@ -44,7 +44,7 @@
     {{-- El footer --}}
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
         <div class="flex">
-            Aqui va algo
+            Derechos reservados - Grand Optica - (contactos de empresa) - Creado por Estudiantes de la UNAB
         </div>
     </footer>
 

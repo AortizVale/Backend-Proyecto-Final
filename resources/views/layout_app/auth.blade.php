@@ -21,7 +21,7 @@
     {{-- El footer --}}
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
         <div class="flex">
-            Aqui va algo
+            Derechos reservados - Grand Optica - (contactos de empresa) - Creado por Estudiantes de la UNAB
         </div>
     </footer>
 

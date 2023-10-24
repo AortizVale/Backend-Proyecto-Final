@@ -15,15 +15,15 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('home', [AuthController::class, "homePage"]);
+Route::get('/', [AuthController::class, "homePage"])->name('home');
 
-Route::get('ingreso', [PacientesController::class, "listPacientes"]);
+Route::get('ingreso', [PacientesController::class, "listPacientes"])->name('ingreso');
 
-Route::get('gestor', [PacientesController::class, "vistaMedico"]);
+Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor');
 
-Route::get('llamado', [PacientesController::class, "vistaLlamado"]);
+Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado');
 
-Route::get('login', [AuthController::class, "loginPage"]);
+Route::get('login', [AuthController::class, "loginPage"])->name('login');
 
-Route::get('registro', [AuthController::class, "registerPage"]);
+Route::get('registro', [AuthController::class, "registerPage"])->name('registro'); 
 

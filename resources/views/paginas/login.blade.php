@@ -2,5 +2,5 @@
 
 @section('content')
     login pagina
-    <a href="home">Regresar</a>
+    <a href="{{ route('home') }}">Regresar</a>
 @endsection
