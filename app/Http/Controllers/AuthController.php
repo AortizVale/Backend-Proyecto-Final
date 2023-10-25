@@ -15,6 +15,6 @@ class AuthController extends Controller
     }
 
     public function registerPage(){
-        return view("paginas.registro");
+        return view("paginas.registro"); 
     }
 }

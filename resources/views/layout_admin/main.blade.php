@@ -31,9 +31,9 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="ingreso">Ingreso de Pacientes</a></li>
-                            <li><a class="dropdown-item" href="gestor">Gestor de Pacientes</a></li>
-                            <li><a class="dropdown-item" href="llamado">Llamado de Pacientes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('ingreso') }}">Ingreso de Pacientes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
                             {{-- <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -55,7 +55,7 @@
     {{-- El footer --}}
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
         <div class="flex">
-            Aqui va algo
+            Derechos reservados - Grand Optica - (contactos de empresa) - Creado por Estudiantes de la UNAB
         </div>
     </footer>
 
