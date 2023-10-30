@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    
     <title>Inicio</title>
 </head>
 
@@ -19,9 +20,19 @@
     @yield('content')
 
     {{-- El footer --}}
-    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
-        <div class="flex">
-            Derechos reservados - Grand Optica - (contactos de empresa) - Creado por Estudiantes de la UNAB
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary ">
+
+        <div class="row">
+            <ul class="list-unstyled d-flex justify-content-lg-center">
+                <li><a class="mx-3" href="#">Contáctenos</a></li>
+                <li><a class="mx-3" href="#">Nuestros Servicios</a></li>
+                <li><a class="mx-3" href="#">Politicas de Privacidad</a></li>
+                <li><a class="mx-3" href="#">Terminos y Condiciones</a></li>
+            </ul>
+        </div>
+
+        <div class='d-flex justify-content-center'>
+            <div>&copy;<span id="year"> </span><span> Grand Optica. Todos los derechos reservados.</span></div>
         </div>
     </footer>
 
