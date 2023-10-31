@@ -10,6 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <title>Inicio</title>
 </head>
 
@@ -17,14 +22,11 @@
     {{-- La navbar --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="img/logo_optica.jpg" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
                 </ul>
                 <div class="auth_buttons">
                     <div class="auth_margen">
@@ -33,7 +35,7 @@
                     <div class="auth_margen">
                         <a class="nav-link active" aria-current="page" href="{{ route('registro') }}">Registrarse</a>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -42,9 +44,19 @@
     home
 
     {{-- El footer --}}
-    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
-        <div class="flex">
-            Derechos reservados - Grand Optica - (contactos de empresa) - Creado por Estudiantes de la UNAB
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary ">
+
+        <div class="row">
+            <ul class="list-unstyled d-flex justify-content-lg-center">
+                <li><a class="mx-3" href="#">Contáctenos</a></li>
+                <li><a class="mx-3" href="#">Nuestros Servicios</a></li>
+                <li><a class="mx-3" href="#">Politicas de Privacidad</a></li>
+                <li><a class="mx-3" href="#">Terminos y Condiciones</a></li>
+            </ul>
+        </div>
+
+        <div class='d-flex justify-content-center'>
+            <div>&copy;<span id="year"> </span><span> Grand Optica. Todos los derechos reservados.</span></div>
         </div>
     </footer>
 
