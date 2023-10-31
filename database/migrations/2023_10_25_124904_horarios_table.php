@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('hora_inicio');
             $table->time('hora_final');
             $table->unsignedBigInteger('medico');
-            $table->foreign('medico')->references('cod_usuario')->on('usuarios');
+            $table->foreign('medico')->references('id')->on('users');
             $table->timestamps();
         });
     }

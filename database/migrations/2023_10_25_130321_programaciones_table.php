@@ -24,7 +24,7 @@ return new class extends Migration
             $table->foreign('cod_horario')->references('cod_horario')->on('horarios_consulta');
             $table->foreign('cod_paciente')->references('cod_paciente')->on('pacientes');
             $table->foreign('cod_consultorio')->references('cod_consultorio')->on('consultorios');
-            $table->foreign('programado_por')->references('cod_usuario')->on('usuarios');
+            $table->foreign('programado_por')->references('id')->on('users');
 
             $table->timestamps();
         });
