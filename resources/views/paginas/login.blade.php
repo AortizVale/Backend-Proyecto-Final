@@ -18,14 +18,16 @@
                 <div class="d-flex justify-content-center mb-3">
                     <img src="img/logo_optica.jpg" style="width: 150px; height: auto;" alt="clawlogo" />
                 </div>
-
+                
+                <form action="{{route("login.auth")}}" method="get">
+                @csrf
                 <div class="l-part">
-                    <input type="text" placeholder="Email" class="input-1" />
+                    <input type="text" placeholder="Email" class="input-1" name="email" id="email"/>
                     <div class="overlap-text">
-                        <input type="password" placeholder="Password" class="input-2" />
+                        <input type="password" placeholder="Password" class="input-2" name="password" id="password"/>
 
                     </div>
-                    <input type="button" value="Entrar" class="btn" />
+                    <button id="submit" type="submit" class="btn">Ingresar</button>
                     <br>
                     <br>
                     
@@ -37,6 +39,7 @@
                     </a>
 
                 </div>
+                </form>
             </div>
             <div class="sub-content">
                 <div class="s-part">

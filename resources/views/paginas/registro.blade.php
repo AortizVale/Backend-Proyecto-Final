@@ -25,8 +25,8 @@
                         <div class="form-items">
                             <h3>Registro Funcionarios</h3>
                             <p>GrandOptica </p>
-                            <form class="requires-validation" novalidate>
-
+                            <form class="requires-validation" novalidate action="{{route("registro.store")}}" method="post">
+                                @csrf
                                 <div class="col-md-12">
                                     <input class="form-control" type="text" name="name" placeholder="Nombre Completo"
                                         required>
@@ -53,7 +53,7 @@
 
 
                                 <div class="col-md-12">
-                                    <input class="form-control" type="text" name="Documento de Identificacion" placeholder="Numero de Documento"
+                                    <input class="form-control" type="text" name="num_doc" placeholder="Numero de Documento"
                                         required>
                                     <div class="valid-feedback">Número Valido</div>
                                     <div class="invalid-feedback">Documento no puede quedar vacío</div>
@@ -61,10 +61,10 @@
 
 
                                 <div class="col-md-12">
-                                    <select class="form-select mt-3" required>
+                                    <select class="form-select mt-3" required name="rol">
                                         <option selected disabled value="">Posición</option>
-                                        <option value="jweb">Medico especialista</option>
-                                        <option value="sweb">Secretaria</option>
+                                        <option value="Medico Especialista">Medico especialista</option>
+                                        <option value="Secretaria">Secretaria</option>
 
                                     </select>
                                     <div class="valid-feedback">Rol valido.</div>

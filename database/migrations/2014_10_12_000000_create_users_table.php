@@ -20,10 +20,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('tipo_doc',50);
             $table->string('num_doc',50);
-            $table->string('nombre1',50);
-            $table->string('nombre2',50)->nullable();
-            $table->string('apellido1',50);
-            $table->string('apellido2',50)->nullable();
+            $table->string('nombres',50);
+            $table->string('apellidos',50);
             $table->rememberToken();
             $table->timestamps();
         });

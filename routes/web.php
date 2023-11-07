@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConsultorioController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,12 @@ Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llama
 Route::get('login', [AuthController::class, "loginPage"])->name('login');
 
 Route::get('registro', [AuthController::class, "registerPage"])->name('registro'); 
+Route::post('register', [UsersController::class, "store"])->name('registro.store'); 
+
+Route::get('iniciar_s', [UsersController::class, "login"])->name('login.auth'); 
 
 Route::get('consultorio/create', [ConsultorioController::class, "create"])->name('consultorio.create'); 
 Route::post('consultorio', [ConsultorioController::class, "store"])->name('consultorio.store'); 
+
+
 
