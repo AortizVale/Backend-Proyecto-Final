@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -15,8 +16,8 @@ class UsersController extends Controller
         $nuevoUsuario->email = $request->email;
         $nuevoUsuario->num_doc = $request->num_doc;
         $nuevoUsuario->tipo_doc = $request->num_doc;
-        $nuevoUsuario->password = $request->password;
-        $nuevoUsuario->rol = $request->rol;
+        $nuevoUsuario->password = Hash::make($request->password);
+        //$nuevoUsuario->rol = $request->rol;
 
         $nuevoUsuario->save();
 
@@ -35,7 +36,7 @@ class UsersController extends Controller
             // Intentar autenticar al usuario
             if (Auth::attempt($credentials)) {
                 // Si las credenciales son correctas, redirige al usuario a su área privada
-                return redirect('/dashboard');
+                return redirect('/ingreso');
             }
         
             // Si las credenciales son incorrectas, muestra un mensaje de error y redirige de nuevo al formulario de inicio de sesión
