@@ -36,7 +36,7 @@
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="true">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/AAOS-Infographic.jpg" class="d-block w-100" alt="...">
+                                <img src="img/presbicia.png" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
                                 <img src="img/infografia.jpg" class="d-block w-100" alt="...">

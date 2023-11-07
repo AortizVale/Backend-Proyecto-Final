@@ -28,12 +28,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-                <div class="auth_buttons">
-                    <div class="auth_margen">
-                        <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Iniciar Sesión</a>
+                <div class="d-flex justify-content-center">
+                    <div class="mx-2">
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('login') }}">Iniciar Sesión</a>
                     </div>
-                    <div class="auth_margen">
-                        <a class="nav-link active" aria-current="page" href="{{ route('registro') }}">Registrarse</a>
+                    <div class="mx-2">
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('registro') }}">Registrarse</a>
                     </div>
                 </div>
             </div>

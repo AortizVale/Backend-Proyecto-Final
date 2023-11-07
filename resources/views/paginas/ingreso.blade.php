@@ -1,24 +1,14 @@
 @extends('layout_admin.main')
 
 @section('content')
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>ingreso</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    </head>
 
     <body>
         <div class="text-center">
-            <legend><h1> Ingreso Pacientes </h1></legend>
-            <br>
+            <legend>
+                <h1> Ingreso Pacientes </h1>
+            </legend>
+            
         </div>
-        <br>
 
         <div class="container align-items-center ">
             <div class="row align-items-center">
@@ -28,22 +18,26 @@
                             <fieldset>
 
                                 <!-- Form Name -->
-                                
+
 
                                 <!-- Text input-->
 
-                                <div class="form-group">
-                                    <div class="text-right"><h2>Información Personal</h2></div>
-                                    <br>
+                                <div class="form-group mb-3">
+                                    <div class="text-right">
+                                        <h2>Información Personal</h2>
+                                    </div>
+                                    
                                     <label class="col-md-4 control-label text-right">Nombres y Apellidos</label>
 
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input name="first_name" placeholder="Nombres" class="form-control" type="text">
+                                            <input name="first_name" placeholder="Nombres" class="form-control"
+                                                type="text">
 
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input name= "last_name" placeholder="Apellidos" class="form-control" type="text">
+                                            <input name= "last_name" placeholder="Apellidos" class="form-control"
+                                                type="text">
 
                                         </div>
                                     </div>
@@ -52,7 +46,7 @@
                                 <!-- Text input-->
 
                                 <!-- Text input-->
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Correo Electronico</label>
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
@@ -66,7 +60,7 @@
 
                                 <!-- Text input-->
 
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Telefono</label>
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
@@ -80,7 +74,7 @@
 
                                 <!-- Text input-->
 
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Ciudad</label>
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
@@ -90,7 +84,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Dirección</label>
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
@@ -105,7 +99,7 @@
 
                                 <!-- Select Basic -->
 
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Departamento</label>
                                     <div class="col-md-4 selectContainer">
                                         <div class="input-group">
@@ -126,34 +120,36 @@
                 </div>
                 <div class="col align-items-center ">
                     <div class="col-md-6 ">
-                        <label class="col-md-4 control-label"> <h2> Prioridad </h2> </label>
+                        <label class="col-md-4 control-label">
+                            <h2> Prioridad </h2>
+                        </label>
                         <div class="col-md-8">
-                            <div class="radio">
-                                <br>
+                            <div class="radio mb-2">
+                                
                                 <label>
                                     <input type="radio" name="hosting" value="yes" /> Adulto Mayor
                                 </label>
                             </div>
-                            <br>
-                            <div class="radio">
+                            
+                            <div class="radio mb-2">
                                 <label>
                                     <input type="radio" name="hosting" value="no" /> Embarazo
                                 </label>
                             </div>
-                            <br>
-                            <div class="radio">
+                            
+                            <div class="radio mb-2">
                                 <label>
                                     <input type="radio" name="hosting" value="no" /> Discapacidad
                                 </label>
                             </div>
-                            <br>
-                            <div class="radio">
+                           
+                            <div class="radio mb-2">
                                 <label>
                                     <input type="radio" name="hosting" value="no" /> Alta ceguera
                                 </label>
                             </div>
-                            <br>
-                            <div class="radio">
+                            
+                            <div class="radio mb-2">
                                 <label>
                                     <input type="radio" name="hosting" value="no" /> No aplica
                                 </label>
@@ -162,8 +158,7 @@
                     </div>
 
                     <!-- Text area -->
-                    <br>
-                    <br>
+                    
                     <div class="form-group">
                         <label class="col-md-4 control-label">Descripción del Paciente</label>
                         <div class="col-md-4 inputGroupContainer">
@@ -175,13 +170,13 @@
                     </div>
 
                     <!-- Success message -->
-                   
+
 
                     <!-- Button -->
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
-                            <button type="submit" class="btn btn-warning">Send <span
+                            <button type="submit" class="btn btn-warning">Enviar <span
                                     class="glyphicon glyphicon-send"></span></button>
                         </div>
                     </div>
@@ -190,9 +185,6 @@
         </div>
 
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
 
     </html>
 @endsection

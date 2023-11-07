@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    
   
     
     <title>Ingreso Pacientes</title>
@@ -37,14 +38,14 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="auth_buttons">
-                    <div class="auth_margen">
-                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Cerrar Sesión</a>
+                <div class="d-flex justify-content-center">
+                    <div class="mx-2">
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('home') }}">Cerrar Sesión</a>
                     </div>
                 </div>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -77,3 +78,4 @@
 </body>
 
 </html>
+

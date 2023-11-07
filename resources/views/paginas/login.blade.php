@@ -1,9 +1,6 @@
 @extends('layout_app.auth')
 
 @section('content')
-    <a href="{{ route('home') }}">Regresar</a>
-    <a href="{{ route('ingreso') }}">login exitoso</a>
-
     <!DOCTYPE html>
     <html lang="en">
 
@@ -18,7 +15,7 @@
     <body>
         <div id="wrapper">
             <div class="main-content flex flex-col">
-                <div class="header">
+                <div class="d-flex justify-content-center mb-3">
                     <img src="img/logo_optica.jpg" style="width: 150px; height: auto;" alt="clawlogo" />
                 </div>
 
@@ -43,7 +40,7 @@
             </div>
             <div class="sub-content">
                 <div class="s-part">
-                    ¿No tienes una cuenta? <a href="#registro"> Registrate</a>
+                    ¿No tienes una cuenta? <a href={{ route('registro') }}> Registrate</a>
                 </div>
             </div>
         </div>
