@@ -17,4 +17,8 @@ class PacientesController extends Controller
     public function vistaLlamado(){
         return view("paginas.llamado");
     }
+
+    public function vistaProgramacion(){
+        return view("paginas.progamacion");
+    }
 }

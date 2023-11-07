@@ -25,6 +25,8 @@ Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor'
 
 Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado');
 
+Route::get('programacion', [PacientesController::class, "vistaProgramacion"])->name('programacion');
+
 Route::get('login', [AuthController::class, "loginPage"])->name('login');
 
 Route::get('registro', [AuthController::class, "registerPage"])->name('registro'); 
