@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id('cod_paciente');
             $table->string('tipo_doc',50);
             $table->string('num_doc',50);
-            $table->string('nombre1',50);
-            $table->string('nombre2',50);
-            $table->string('apellido1',50);
-            $table->string('apellido2',50);
+            $table->string('nombres',150);
+            $table->string('apellidos',150);
             $table->string('correo',100);
             $table->integer('telefono');
             $table->text('direccion');

@@ -74,15 +74,6 @@
 
                                 <!-- Text input-->
 
-                                <div class="form-group mb-3">
-                                    <label class="col-md-4 control-label">Ciudad</label>
-                                    <div class="col-md-4 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                            <input name="city" placeholder="Bogotá" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="form-group mb-3">
                                     <label class="col-md-4 control-label">Dirección</label>
@@ -99,63 +90,12 @@
 
                                 <!-- Select Basic -->
 
-                                <div class="form-group mb-3">
-                                    <label class="col-md-4 control-label">Departamento</label>
-                                    <div class="col-md-4 selectContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                            <select name="state" class="form-control selectpicker">
-                                                <option value=" ">Seleccionar</option>
-                                                <option>Santander</option>
-                                                <option>Norte de Santander</option>
-                                                <option>Cesar</option>
-                                                <option>Magdalena</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                            
                             </fieldset>
                         </form>
                     </div>
                 </div>
                 <div class="col align-items-center ">
-                    <div class="col-md-6 ">
-                        <label class="col-md-4 control-label">
-                            <h2> Prioridad </h2>
-                        </label>
-                        <div class="col-md-8">
-                            <div class="radio mb-2">
-                                
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Adulto Mayor
-                                </label>
-                            </div>
-                            
-                            <div class="radio mb-2">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> Embarazo
-                                </label>
-                            </div>
-                            
-                            <div class="radio mb-2">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> Discapacidad
-                                </label>
-                            </div>
-                           
-                            <div class="radio mb-2">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> Alta ceguera
-                                </label>
-                            </div>
-                            
-                            <div class="radio mb-2">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No aplica
-                                </label>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Text area -->
                     

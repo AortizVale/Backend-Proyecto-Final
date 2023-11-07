@@ -12,9 +12,6 @@
                     Hora
                 </div>
                 <div class='col-md-2'>
-                    Prioridad
-                </div>
-                <div class='col-md-2'>
                     Llamar
                 </div>
                 <div class='col-md-2'>
