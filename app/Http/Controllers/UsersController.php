@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 {
     public function store(Request $request){
+       
         $nuevoUsuario=new users();
         $nuevoUsuario->nombres = $request->name;
         $nuevoUsuario->apellidos = $request->name;
@@ -21,22 +22,28 @@ class UsersController extends Controller
 
         $nuevoUsuario->save();
 
-        echo 'usuario creado con éxito';
+        $nuevoUsuario->assignRole($request->rol);
+
+        return redirect()->route("login");
+
+        //echo 'usuario creado con éxito';
         }
 
         
-    public function login (Request $request){
+    public function login(Request $request){
+            //dd($request->email);
             $request->validate([
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
+            
         
             $credentials = $request->only('email', 'password');
         
             // Intentar autenticar al usuario
             if (Auth::attempt($credentials)) {
                 // Si las credenciales son correctas, redirige al usuario a su área privada
-                return redirect('/ingreso');
+                return redirect()->route('ingreso');
             }
         
             // Si las credenciales son incorrectas, muestra un mensaje de error y redirige de nuevo al formulario de inicio de sesión

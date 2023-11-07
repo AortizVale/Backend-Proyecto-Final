@@ -18,27 +18,37 @@
                 <div class="d-flex justify-content-center mb-3">
                     <img src="img/logo_optica.jpg" style="width: 150px; height: auto;" alt="clawlogo" />
                 </div>
-                
-                <form action="{{route("login.auth")}}" method="get">
-                @csrf
-                <div class="l-part">
-                    <input type="text" placeholder="Email" class="input-1" name="email" id="email"/>
-                    <div class="overlap-text">
-                        <input type="password" placeholder="Password" class="input-2" name="password" id="password"/>
+
+                <form action="{{ route('login.auth') }}" method="post">
+                    @csrf
+                    <div class="l-part">
+                        <input type="text" placeholder="Email" class="input-1" name="email" id="email" value="{{ old('email') }}" />
+                        @error('email')
+                            <small style="color: red">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                        <div class="overlap-text">
+                            <input type="password" placeholder="Password" class="input-2" name="password" id="password" />
+                            @error('password')
+                            <small style="color: red">
+                                {{ $message }}
+                            </small>
+                        @enderror
+                        </div>
+
+                        <button id="submit" type="submit" class="btn">Ingresar</button>
+                        <br>
+                        <br>
+
+                        <br>
+                        <br>
+
+                        <a class="forgot-password-link" href="#" role="link" tabindex="0">
+                            <span class="forgot-password-text">¿Has olvidado la contraseña?</span>
+                        </a>
 
                     </div>
-                    <button id="submit" type="submit" class="btn">Ingresar</button>
-                    <br>
-                    <br>
-                    
-                    <br>
-                    <br>
-
-                    <a class="forgot-password-link" href="#" role="link" tabindex="0">
-                        <span class="forgot-password-text">¿Has olvidado la contraseña?</span>
-                    </a>
-
-                </div>
                 </form>
             </div>
             <div class="sub-content">

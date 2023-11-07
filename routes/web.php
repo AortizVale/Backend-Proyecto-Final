@@ -23,7 +23,7 @@ Route::get('ingreso', [PacientesController::class, "listPacientes"])->name('ingr
 
 Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor');
 
-Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado');
+Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado')->middleware("can:llamada");
 
 Route::get('programacion', [PacientesController::class, "vistaProgramacion"])->name('programacion');
 
@@ -32,7 +32,7 @@ Route::get('login', [AuthController::class, "loginPage"])->name('login');
 Route::get('registro', [AuthController::class, "registerPage"])->name('registro'); 
 Route::post('register', [UsersController::class, "store"])->name('registro.store'); 
 
-Route::get('iniciar_s', [UsersController::class, "login"])->name('login.auth'); 
+Route::post('iniciar_s', [UsersController::class, "login"])->name('login.auth'); 
 
 Route::get('consultorio/create', [ConsultorioController::class, "create"])->name('consultorio.create'); 
 Route::post('consultorio', [ConsultorioController::class, "store"])->name('consultorio.store'); 

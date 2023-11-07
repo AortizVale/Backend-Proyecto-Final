@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::create(['name' => 'medico']);
-        $permission = Permission::create(['name' => 'crear horario']);
+        $this->call([
+           PermissionSeeder::class,
+        ]);
     }
 }

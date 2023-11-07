@@ -6,19 +6,31 @@ use Illuminate\Http\Request;
 
 class PacientesController extends Controller
 {
-    public function listPacientes(){
+    public function listPacientes()
+    {
         return view("paginas.ingreso");
     }
 
-    public function vistaMedico(){
+    public function vistaMedico()
+    {
         return view("paginas.gestor");
     }
 
-    public function vistaLlamado(){
-        return view("paginas.llamado");
+    public function vistaLlamado()
+    {
+
+        /* if (auth()->user()->hasPermissionTo('llamada')) { */
+            return view("paginas.llamado");
+       /*  } else {
+            echo "NO TIENE PERMISOS";
+        } */
+
+
+
     }
 
-    public function vistaProgramacion(){
+    public function vistaProgramacion()
+    {
         return view("paginas.progamacion");
     }
 }

@@ -25,7 +25,8 @@
                         <div class="form-items">
                             <h3>Registro Funcionarios</h3>
                             <p>GrandOptica </p>
-                            <form class="requires-validation" novalidate action="{{route("registro.store")}}" method="post">
+                            <form class="requires-validation" novalidate action="{{ route('registro.store') }}"
+                                method="post">
                                 @csrf
                                 <div class="col-md-12">
                                     <input class="form-control" type="text" name="name" placeholder="Nombre Completo"
@@ -49,12 +50,12 @@
                                 </div>
 
 
-                            
+
 
 
                                 <div class="col-md-12">
-                                    <input class="form-control" type="text" name="num_doc" placeholder="Numero de Documento"
-                                        required>
+                                    <input class="form-control" type="text" name="num_doc"
+                                        placeholder="Numero de Documento" required>
                                     <div class="valid-feedback">Número Valido</div>
                                     <div class="invalid-feedback">Documento no puede quedar vacío</div>
                                 </div>
@@ -62,9 +63,10 @@
 
                                 <div class="col-md-12">
                                     <select class="form-select mt-3" required name="rol">
-                                        <option selected disabled value="">Posición</option>
-                                        <option value="Medico Especialista">Medico especialista</option>
-                                        <option value="Secretaria">Secretaria</option>
+                                        <option selected disabled value="">---Seleccione----</option>
+                                        @foreach ($roles as $role)
+                                            <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                        @endforeach
 
                                     </select>
                                     <div class="valid-feedback">Rol valido.</div>
