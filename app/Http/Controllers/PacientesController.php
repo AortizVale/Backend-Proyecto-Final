@@ -25,12 +25,15 @@ class PacientesController extends Controller
             echo "NO TIENE PERMISOS";
         } */
 
-
-
     }
 
     public function vistaProgramacion()
     {
         return view("paginas.progamacion");
+    }
+
+    public function vistaConfirmacion()
+    {
+        return view("paginas.conf_llamada");
     }
 }

@@ -30,6 +30,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('ingreso') }}">Ingreso de Pacientes</a></li>
                             <li><a class="dropdown-item" href="{{ route('programacion') }}">Programacion de horarios</a></li>
+                            <li><a class="dropdown-item" href="{{ route('confirmacion') }}">Confirmar Llegada</a></li>
                             <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
                             <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
                             {{-- <li>
