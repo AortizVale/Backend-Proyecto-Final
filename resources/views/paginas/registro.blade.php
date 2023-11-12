@@ -29,7 +29,14 @@
                                 method="post">
                                 @csrf
                                 <div class="col-md-12">
-                                    <input class="form-control" type="text" name="name" placeholder="Nombre Completo"
+                                    <input class="form-control" type="text" name="nombres" placeholder="Nombres"
+                                    
+                                        required>
+                                    <div class="valid-feedback">Usuario Valido</div>
+                                    <div class="invalid-feedback">El nombre de Usuario no puede quedar vacio</div>
+
+                                    <input class="form-control" type="text" name="apellidos" placeholder="Apellidos"
+                                    
                                         required>
                                     <div class="valid-feedback">Usuario Valido</div>
                                     <div class="invalid-feedback">El nombre de Usuario no puede quedar vacio</div>
@@ -49,6 +56,15 @@
                                     <div class="invalid-feedback">Contraseña no puede quedar vacia</div>
                                 </div>
 
+                                <div class="col-md-12">
+                                    <select class="form-select mt-3" required name="">
+                                        <option selected disabled value="">Tipo de Documento</option>
+                                        <option value="Cedula">Cédula de Ciudadania</option>
+                                        <option value="Cedula de Extranjeria">Cédula de Extranjeria</option>
+                                    </select>
+                                    
+                                </div>
+
 
 
 
@@ -62,7 +78,7 @@
 
 
                                 <div class="col-md-12">
-                                    <select class="form-select mt-3" required name="rol">
+                                    <select class="form-select mt-3" required name="tipo_doc">
                                         <option selected disabled value="">---Seleccione----</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}">{{ $role->name }}</option>
@@ -71,30 +87,15 @@
                                     </select>
                                     <div class="valid-feedback">Rol valido.</div>
                                     <div class="invalid-feedback">Por favor selecciona un rol.</div>
+
+                                    <br>
                                 </div>
 
 
 
 
 
-                                <div class="col-md-12 mt-3">
-                                    <label class="mb-3 mr-1" for="gender">Genero: </label>
-
-                                    <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off"
-                                        required>
-                                    <label class="btn btn-sm btn-outline-secondary" for="male">Hombre</label>
-
-                                    <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off"
-                                        required>
-                                    <label class="btn btn-sm btn-outline-secondary" for="female">Mujer</label>
-
-                                    <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off"
-                                        required>
-                                    <label class="btn btn-sm btn-outline-secondary" for="secret">Prefiero no
-                                        decirlo</label>
-                                    <div class="valid-feedback mv-up">Seleccionaste un Genero!</div>
-                                    <div class="invalid-feedback mv-up">Por favor selecciona un genero</div>
-                                </div>
+                                
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck"

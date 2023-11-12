@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>esta es la de confirmar llamado</h1>
+<div class="text-center"> <h2>Confirmar Llegada</h2></div>
 
 <body class="fondo-gris">
     <div class='container-text-center my-2'>
@@ -11,13 +11,13 @@
                 Paciente
             </div>
             <div class='col-md-2'>
-                Hora
+                Dia/Hora
             </div>
             <div class='col-md-2'>
-                Llamar
+                Llegó
             </div>
             <div class='col-md-2'>
-                Quitar
+                No llegó
             </div>
         </div>
     </div>
