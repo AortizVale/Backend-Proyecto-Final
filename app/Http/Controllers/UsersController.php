@@ -6,23 +6,25 @@ use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+
 
 class UsersController extends Controller
 {
     public function store(Request $request){
        
-        $nuevoUsuario=new users();
-        $nuevoUsuario->nombres = $request->nombres;
-        $nuevoUsuario->apellidos = $request->apellidos;
-        $nuevoUsuario->email = $request->email;
-        $nuevoUsuario->num_doc = $request->num_doc;
-        $nuevoUsuario->tipo_doc = $request->num_doc;
-        $nuevoUsuario->password = Hash::make($request->password);
-        //$nuevoUsuario->rol = $request->rol;
+        // Crear el usuario
+        $usuario = Users::create([
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
+            'email' => $request->email,
+            'num_doc' => $request->tipo_doc,
+            'tipo_doc' => $request->num_doc,
+            'password' => Hash::make($request->password)
+        ]);
 
-        $nuevoUsuario->save();
-
-        $nuevoUsuario->assignRole($request->rol);
+        $rol = Role::where('name', $request->rol)->first();
+        $usuario->assignRole($rol);
 
         return redirect()->route("login");
 
@@ -48,5 +50,13 @@ class UsersController extends Controller
         
             // Si las credenciales son incorrectas, muestra un mensaje de error y redirige de nuevo al formulario de inicio de sesión
             return back()->withErrors(['email' => 'Credenciales incorrectas']);
+        }
+    public function logout(Request $request)
+        {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect()->route("login");
         }
 }

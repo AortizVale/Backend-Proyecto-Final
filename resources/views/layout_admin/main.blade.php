@@ -42,7 +42,12 @@
                 </ul>
                 <div class="d-flex justify-content-center">
                     <div class="mx-2">
-                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('home') }}">Cerrar Sesión</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Cerrar Sesión
+                        </a>
                     </div>
                 </div>
                 <form class="d-flex" role="search">

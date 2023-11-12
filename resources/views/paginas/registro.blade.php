@@ -57,7 +57,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <select class="form-select mt-3" required name="">
+                                    <select class="form-select mt-3" required name="tipo_doc">
                                         <option selected disabled value="">Tipo de Documento</option>
                                         <option value="Cedula">Cédula de Ciudadania</option>
                                         <option value="Cedula de Extranjeria">Cédula de Extranjeria</option>
@@ -78,7 +78,7 @@
 
 
                                 <div class="col-md-12">
-                                    <select class="form-select mt-3" required name="tipo_doc">
+                                    <select class="form-select mt-3" required name="rol">
                                         <option selected disabled value="">---Seleccione----</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}">{{ $role->name }}</option>
