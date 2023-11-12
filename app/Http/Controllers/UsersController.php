@@ -12,8 +12,8 @@ class UsersController extends Controller
     public function store(Request $request){
        
         $nuevoUsuario=new users();
-        $nuevoUsuario->nombres = $request->name;
-        $nuevoUsuario->apellidos = $request->name;
+        $nuevoUsuario->nombres = $request->nombres;
+        $nuevoUsuario->apellidos = $request->apellidos;
         $nuevoUsuario->email = $request->email;
         $nuevoUsuario->num_doc = $request->num_doc;
         $nuevoUsuario->tipo_doc = $request->num_doc;
