@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConsultorioController;
+use App\Http\Controllers\LlegadaController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProgramacionController;
 
 Route::middleware('noCache')->group(function () {
 
@@ -24,8 +26,12 @@ Route::middleware('noCache')->group(function () {
         Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado')->middleware("can:llamada");
 
         Route::get('programacion', [PacientesController::class, "vistaProgramacion"])->name('programacion')->middleware("can:programacion");
+        Route::post('programacion/create', [ProgramacionController::class, "store"])->name('programacion.store')->middleware("can:programacion");
 
         Route::get('confirmacion', [PacientesController::class, "vistaConfirmacion"])->name('confirmacion')->middleware("can:confirmacion");
+        Route::post('confirmacion/create', [LlegadaController::class, "store"])->name('confirmacion.store')->middleware("can:confirmacion");
+
+        
     });
 
     //Rutas que no requieren ingresp

@@ -17,7 +17,8 @@
             <div class="row align-items-center">
                 <div class="col">
                     <div class="container">
-                        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                        <form class="well form-horizontal" action="{{ route('programacion.store') }}" method="post" id="contact_form">
+                            @csrf
                             <fieldset>
 
                                 <!-- Form Name -->
@@ -25,7 +26,7 @@
                                 
                                 <!-- Text input-->
 
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-3" >
                                     <br>
 
                                     <label class="col-md-4 control-label text-right">Medico</label>
@@ -33,8 +34,9 @@
                                     <div class="col-md-12">
                                         <select class="form-select mt-3" required name="cod_medico">
                                             <option selected disabled value="">--Seleccione--</option>
-                                            <option value="Cedula">1</option>
-                                            <option value="Cedula de Extranjeria">2</option>
+                                            @foreach ($users as $medico)
+                                            <option value="{{ $medico->id }}">{{ $medico->nombres }} {{ $medico->apellidos }}</option>
+                                            @endforeach
                                         </select>
                                         <br>
                                     </div>
@@ -71,6 +73,43 @@
                                         </div>
                                     </div>
 
+                                    <div class="col align-items-center ">
+
+                                        <!-- Text area -->
+                    
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Fecha de la cita</label>
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="col-md-4">
+                                                   
+                                                    <input type="date" name="fecha" id="asd">
+                                                    <br>
+                                                    
+                                                   
+                                                    <label class="control-label">Hora Inicio</label>
+                                                    <input type="time" name="hora_inicio" id="asd">
+                                                    <br>
+                                                    <label class="control-label">Hora Final</label>
+                                                    <br>
+                                                    <input type="time" name="hora_final" id="asd">
+                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Success message -->
+                    
+                    
+                                        <!-- Button -->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label"></label>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn btn-warning">Enviar <span
+                                                        class="glyphicon glyphicon-send"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                 </div>
 
@@ -85,43 +124,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col align-items-center ">
-
-                    <!-- Text area -->
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Fecha de la cita</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                               
-                                <input type="date" name="fecha" id="asd">
-                                <br>
-                                
-                               
-                                <label class="control-label">Hora Inicio</label>
-                                <input type="time" name="hora_inicio" id="asd">
-                                <br>
-                                <label class="control-label">Hora Final</label>
-                                <br>
-                                <input type="time" name="hora_final" id="asd">
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Success message -->
-
-
-                    <!-- Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"></label>
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-warning">Enviar <span
-                                    class="glyphicon glyphicon-send"></span></button>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 

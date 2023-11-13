@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Consultorio;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use App\Models\users;
+use App\Models\Programacion;
+use App\Models\Llegada;
 
 class PacientesController extends Controller
 {
@@ -25,15 +28,27 @@ class PacientesController extends Controller
 
     public function vistaProgramacion()
     {
+        $users = users::with("roles")->whereHas("roles", function($q) {
+            $q->whereIn("name", ["medico"]);
+        })->get();
         $consultorios = Consultorio::all();
         $pacientes = Paciente::all();
-        return view("paginas.progamacion", ['consultorios' => $consultorios, 'pacientes' => $pacientes]);
+        //$users = users::all();
+        return view("paginas.progamacion", ['consultorios' => $consultorios, 'pacientes' => $pacientes, 'users' =>$users]);
     }
 
     public function vistaConfirmacion()
-    {
-        return view("paginas.conf_llamada");
-    }
+{
+    // Obtener los cod_program de llegadas
+    $codigosLlegadas = Llegada::pluck('cod_program')->toArray();
+
+    // Obtener programaciones que no estén en llegadas
+    $programaciones = Programacion::with('medico', 'paciente', 'consultorio')
+        ->whereNotIn('cod_program', $codigosLlegadas)
+        ->get();
+
+    return view("paginas.conf_llamada", ['programaciones' => $programaciones]);
+}
 
     public function store(Request $request){
        
