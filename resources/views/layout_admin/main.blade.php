@@ -33,6 +33,7 @@
                             <li><a class="dropdown-item" href="{{ route('confirmacion') }}">Confirmar Llegada</a></li>
                             <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
                             <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('consultorio.create') }}">Creación de Consultorios</a></li>
                             {{-- <li>
                                 <hr class="dropdown-divider">
                             </li>

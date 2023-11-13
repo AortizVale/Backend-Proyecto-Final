@@ -21,6 +21,6 @@ class AuthController extends Controller
     {
 
         $roles = Role::all();
-        return view("paginas.registro", ['roles' => $roles, "ni_nombre" => "Andres"]);
+        return view("paginas.registro", ['roles' => $roles]);
     }
 }

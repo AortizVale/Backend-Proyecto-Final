@@ -14,7 +14,7 @@ class ConsultorioController extends Controller
         $nuevoConsultorio=new Consultorio();
         $nuevoConsultorio->nombre=$request->nombre;
         $nuevoConsultorio->save();
-        echo 'consultorio creado';
+        return redirect()->route("consultorio.create");
     }
     
 }

@@ -30,7 +30,7 @@ class PermissionSeeder extends Seeder
         $permiRegistro = Permission::create(["name" => "registrar"]);
         $permiConsultorio = Permission::create(["name" => "consultorio"]);
 
-        $rolMedico->syncPermissions([$permiGestor, $permiLlamado]);
+        $rolMedico->syncPermissions([$permiGestor, $permiLlamado, $permiProgramacion]);
 
         $rolSecre->syncPermissions([$permiLlamado, $permiIngreso, $permiProgramacion, $permiConfirmacion]);
 

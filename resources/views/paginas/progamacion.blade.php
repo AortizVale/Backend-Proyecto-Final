@@ -43,8 +43,9 @@
                                     <div class="col-md-12">
                                         <select class="form-select mt-3" required name="cod_paciente">
                                             <option selected disabled value="">--Seleccione--</option>
-                                            <option value="Cedula">1</option>
-                                            <option value="Cedula de Extranjeria">2</option>
+                                            @foreach ($pacientes as $paciente)
+                                            <option value="{{ $paciente->cod_paciente }}">{{ $paciente->nombres }} {{ $paciente->apellidos }}</option>
+                                            @endforeach
                                         </select>
                                         <br>
                                     </div>
@@ -53,8 +54,9 @@
                                     <div class="col-md-12">
                                         <select class="form-select mt-3" required name="cod_consultorio">
                                             <option selected disabled value="">--Seleccione--</option>
-                                            <option value="Cedula">1</option>
-                                            <option value="Cedula de Extranjeria">2</option>
+                                            @foreach ($consultorios as $consultorio)
+                                            <option value="{{ $consultorio->cod_consultorio }}">{{ $consultorio->nombre }}</option>
+                                            @endforeach
                                         </select>
                                         <br>
                                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consultorio;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 
@@ -24,7 +25,9 @@ class PacientesController extends Controller
 
     public function vistaProgramacion()
     {
-        return view("paginas.progamacion");
+        $consultorios = Consultorio::all();
+        $pacientes = Paciente::all();
+        return view("paginas.progamacion", ['consultorios' => $consultorios, 'pacientes' => $pacientes]);
     }
 
     public function vistaConfirmacion()

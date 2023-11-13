@@ -16,7 +16,7 @@
         <div id="wrapper">
             <div class="main-content flex flex-col">
                 <div class="d-flex justify-content-center mb-3">
-                    <img src="img/logo_optica.jpg" style="width: 150px; height: auto;" alt="clawlogo" />
+                    <img src="img/logo_optica.png" style="width: 150px; height: auto;" alt="clawlogo" />
                 </div>
 
                 <form action="{{ route('login.auth') }}" method="post">

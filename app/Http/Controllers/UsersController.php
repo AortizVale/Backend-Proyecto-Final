@@ -45,7 +45,7 @@ class UsersController extends Controller
             // Intentar autenticar al usuario
             if (Auth::attempt($credentials)) {
                 // Si las credenciales son correctas, redirige al usuario a su área privada
-                return redirect()->route('ingreso');
+                return redirect()->route('llamado');
             }
         
             // Si las credenciales son incorrectas, muestra un mensaje de error y redirige de nuevo al formulario de inicio de sesión
