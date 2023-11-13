@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consultorio;
+use App\Models\Llamado;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\users;
 use App\Models\Programacion;
 use App\Models\Llegada;
+use Illuminate\Support\Facades\Auth;
 
 class PacientesController extends Controller
 {
@@ -18,7 +20,13 @@ class PacientesController extends Controller
 
     public function vistaMedico()
     {
-        return view("paginas.gestor");
+        $llamadosRealizados = Llamado::pluck('cod_llegada')->toArray();
+        $usuarioLogueado = Auth::user();
+
+        $llegadas = Llegada::whereHas('programacion.medico', function ($query) use ($usuarioLogueado) {
+            $query->where('id', $usuarioLogueado->id);
+        })->get();
+        return view("paginas.gestor",['llegadas' => $llegadas , 'llamados_Realizados' => $llamadosRealizados]);
     }
 
     public function vistaLlamado()

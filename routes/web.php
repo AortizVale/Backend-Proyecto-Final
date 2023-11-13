@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacientesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConsultorioController;
+use App\Http\Controllers\LlamadoController;
 use App\Http\Controllers\LlegadaController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProgramacionController;
@@ -22,6 +23,8 @@ Route::middleware('noCache')->group(function () {
         Route::post('ingreso/crearPaciente', [PacientesController::class, "store"])->name('paciente.store')->middleware("can:ingreso");
 
         Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor')->middleware("can:gestor");
+        Route::post('gestor/create', [LlamadoController::class, "store"])->name('gestor.store')->middleware("can:gestor");
+        Route::post('gestor/llamar', [LlamadoController::class, "llamar_adicional"])->name('gestor.llamar')->middleware("can:gestor");
 
         Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado')->middleware("can:llamada");
 
