@@ -41,20 +41,8 @@
                         <br>
                         <br>
 
-                        <br>
-                        <br>
-
-                        <a class="forgot-password-link" href="#" role="link" tabindex="0">
-                            <span class="forgot-password-text">¿Has olvidado la contraseña?</span>
-                        </a>
-
                     </div>
                 </form>
-            </div>
-            <div class="sub-content">
-                <div class="s-part">
-                    ¿No tienes una cuenta? <a href={{ route('registro') }}> Registrate</a>
-                </div>
             </div>
         </div>
 

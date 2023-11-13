@@ -3,13 +3,7 @@
 @section('content')
 
     <body>
-        <div class="text-center">
-            <legend>
-                <h1> Ingreso Pacientes </h1>
-            </legend>
-            
-        </div>
-
+        <br>
         <div class="container align-items-center ">
             <div class="row align-items-center">
                 <div class="col">

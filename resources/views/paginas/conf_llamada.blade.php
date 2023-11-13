@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="text-center"> <h2>Confirmar Llegada</h2></div>
-
 <body class="fondo-gris">
     <div class='container-text-center my-2'>
         <div class='row d-flex justify-content-center'>
