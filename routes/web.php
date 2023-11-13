@@ -17,6 +17,7 @@ Route::middleware('noCache')->group(function () {
         Route::post('consultorio', [ConsultorioController::class, "store"])->name('consultorio.store')->middleware("can:consultorio");
 
         Route::get('ingreso', [PacientesController::class, "listPacientes"])->name('ingreso')->middleware("can:ingreso");
+        Route::post('ingreso/crearPaciente', [PacientesController::class, "store"])->name('paciente.store')->middleware("can:ingreso");
 
         Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor')->middleware("can:gestor");
 

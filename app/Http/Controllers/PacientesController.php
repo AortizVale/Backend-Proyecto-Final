@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Paciente;
 
 class PacientesController extends Controller
 {
@@ -30,4 +31,23 @@ class PacientesController extends Controller
     {
         return view("paginas.conf_llamada");
     }
+
+    public function store(Request $request){
+       
+        // Crear el usuario
+        $paciente = Paciente::create([
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
+            'correo' => $request->correo,
+            'num_doc' => $request->tipo_doc,
+            'tipo_doc' => $request->num_doc,
+            'direccion' => $request->direccion,
+            'fecha_nac' => $request->fecha_nac,
+            'telefono' => intval($request->telefono)
+        ]);
+
+        return redirect()->route("ingreso");
+
+        //echo 'usuario creado con éxito';
+        }
 }

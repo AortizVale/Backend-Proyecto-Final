@@ -14,7 +14,8 @@
             <div class="row align-items-center">
                 <div class="col">
                     <div class="container">
-                        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+                        <form class="well form-horizontal" action="{{ route('paciente.store') }}" method="post" id="ingreso_paciente">
+                            @csrf
                             <fieldset>
 
                                 <!-- Form Name -->
@@ -32,17 +33,37 @@
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input name="first_name" placeholder="Nombres" class="form-control"
+                                            <input name="nombres" placeholder="Nombres" class="form-control"
                                                 type="text">
 
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input name= "last_name" placeholder="Apellidos" class="form-control"
+                                            <input name= "apellidos" placeholder="Apellidos" class="form-control"
                                                 type="text">
 
                                         </div>
                                     </div>
                                 </div>
 
+                                <label class="col-md-4 control-label text-right">Tipo de Documento</label>
+
+                                <div class="col-md-12">
+                                    <select class="form-select mt-3" required name="tipo_doc">
+                                        <option selected disabled value="">Tipo de Documento</option>
+                                        <option value="Cedula">Cédula de Ciudadania</option>
+                                        <option value="Cedula de Extranjeria">Cédula de Extranjeria</option>
+                                    </select>
+                                    
+                                </div>
+
+
+                                <label class="col-md-4 control-label text-right">Número de Documento</label>
+
+                                <div class="col-md-12">
+                                    <input class="form-control" type="text" name="num_doc"
+                                        placeholder="Numero de Documento" required>
+                                    <div class="valid-feedback">Número Valido</div>
+                                    <div class="invalid-feedback">Documento no puede quedar vacío</div>
+                                </div>
                                 <!-- Text input-->
 
                                 <!-- Text input-->
@@ -52,12 +73,28 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-envelope"></i></span>
-                                            <input name="email" placeholder="Correo Electronico" class="form-control"
+                                            <input name="correo" placeholder="Correo Electronico" class="form-control"
                                                 type="text">
                                         </div>
                                     </div>
                                 </div>
 
+
+                            
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Fecha de Nacimiento</label>
+                                    <div class="col-md-4 inputGroupContainer">
+                                        <div class="input-group">
+                                           
+                                            <input type="date" name="fecha_nac" id="asd">
+                                            <br>
+                                           
+                                            
+            
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Text input-->
 
                                 <div class="form-group mb-3">
@@ -66,8 +103,8 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-earphone"></i></span>
-                                            <input name="phone" placeholder="(320)2424400" class="form-control"
-                                                type="text">
+                                            <input name="telefono" placeholder="(320)2424400" class="form-control"
+                                                type="number">
                                         </div>
                                     </div>
                                 </div>
@@ -80,11 +117,21 @@
                                     <div class="col-md-4 inputGroupContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                            <input name="address" placeholder="Dirección" class="form-control"
+                                            <input name="direccion" placeholder="Dirección" class="form-control"
                                                 type="text">
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn btn-warning">Enviar <span
+                                                class="glyphicon glyphicon-send"></span></button>
+                                    </div>
+                                </div>
+
+                                
 
                                 <!-- Text input-->
 
@@ -98,28 +145,12 @@
                 <div class="col align-items-center ">
 
                     <!-- Text area -->
-                    
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Descripción del Paciente</label>
-                        <div class="col-md-4 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <textarea class="form-control" name="comment" placeholder="Descripcion mínima"></textarea>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Success message -->
 
 
                     <!-- Button -->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label"></label>
-                        <div class="col-md-4">
-                            <button type="submit" class="btn btn-warning">Enviar <span
-                                    class="glyphicon glyphicon-send"></span></button>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
