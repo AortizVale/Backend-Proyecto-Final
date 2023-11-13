@@ -23,17 +23,15 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="img/logo_optica.jpg" alt="Bootstrap", width="150">
+                <img src="img/logo_optica.png" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
                 <div class="d-flex justify-content-center">
                     <div class="mx-2">
-                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('login') }}">Iniciar Sesión</a>
-                    </div>
-                    <div class="mx-2">
-                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="{{ route('registro') }}">Registrarse</a>
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page"
+                            href="{{ route('login') }}">Iniciar Sesión</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +39,12 @@
     </nav>
 
     {{-- El content --}}
-    home
+    <div>
+        <div class="d-flex justify-content-center">
+            <img src="img/cuadro.png" class="h-20 w-40" >
+        </div>
+    </div>
+
 
     {{-- El footer --}}
     <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary ">

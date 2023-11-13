@@ -10,7 +10,7 @@
     
   
     
-    <title>Ingreso Pacientes</title>
+    <title>Grand Optica</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{asset("img/logo_optica.jpg")}}" alt="Bootstrap", width="150">
+                <img src="{{asset("img/logo_optica.png")}}" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,13 +41,17 @@
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center">
-                    <div class="mx-2">
+                    <div class="mx-2 d-flex">
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+
+                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active mx-2" aria-current="page" href="{{ route('registro') }}">Registrar Usuario</a>
+
                         <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Cerrar Sesión
                         </a>
+                        
                     </div>
                 </div>
                 <form class="d-flex" role="search">

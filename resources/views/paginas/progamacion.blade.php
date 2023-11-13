@@ -12,12 +12,6 @@
     </head>
 
     <body>
-        <div class="text-center">
-            <legend>
-                <h1> Programación de Citas </h1>
-            </legend>
-
-        </div>
 
         <div class="container align-items-center ">
             <div class="row align-items-center">
@@ -32,10 +26,7 @@
                                 <!-- Text input-->
 
                                 <div class="form-group mb-3">
-                                    <div class="text-right">
-                                        <h2>Grand Optica</h2>
-                                        <br>
-                                    </div>
+                                    <br>
 
                                     <label class="col-md-4 control-label text-right">Medico</label>
 
