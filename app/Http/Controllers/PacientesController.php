@@ -18,13 +18,7 @@ class PacientesController extends Controller
 
     public function vistaLlamado()
     {
-
-        /* if (auth()->user()->hasPermissionTo('llamada')) { */
             return view("paginas.llamado");
-       /*  } else {
-            echo "NO TIENE PERMISOS";
-        } */
-
     }
 
     public function vistaProgramacion()

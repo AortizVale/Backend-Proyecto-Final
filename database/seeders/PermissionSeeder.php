@@ -22,11 +22,17 @@ class PermissionSeeder extends Seeder
         $rolMedico = Role::create(['name' => 'medico']);
         $rolSecre = Role::create(['name' => 'secretaria']);
         
+        $permiIngreso = Permission::create(["name" => "ingreso"]);
+        $permiProgramacion = Permission::create(["name" => "programacion"]);
+        $permiConfirmacion = Permission::create(["name" => "confirmacion"]);
         $permiGestor = Permission::create(["name" => "gestor"]);
         $permiLlamado = Permission::create(["name" => "llamada"]);
+        $permiRegistro = Permission::create(["name" => "registrar"]);
+        $permiConsultorio = Permission::create(["name" => "consultorio"]);
 
-        $rolMedico->syncPermissions([$permiGestor]);
-        $rolSecre->syncPermissions([$permiLlamado]);
+        $rolMedico->syncPermissions([$permiGestor, $permiLlamado]);
+
+        $rolSecre->syncPermissions([$permiLlamado, $permiIngreso, $permiProgramacion, $permiConfirmacion]);
 
 
         $usuario = Users::create([
@@ -39,6 +45,6 @@ class PermissionSeeder extends Seeder
         ]);
 
         $usuario->assignRole($rolAdmin);
-        $rolAdmin->syncPermissions([$permiLlamado, $permiGestor]);
+        $rolAdmin->syncPermissions([$permiLlamado, $permiGestor, $permiRegistro, $permiConsultorio, $permiIngreso, $permiProgramacion, $permiConfirmacion]);
     }
 }
