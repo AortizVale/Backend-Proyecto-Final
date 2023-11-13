@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id('cod_llegada');
             $table->unsignedBigInteger('cod_program');
             $table->foreign('cod_program')->references('cod_program')->on('programaciones');
+            $table->integer('pasado');
             $table->timestamps();
+            
         });
     }
 

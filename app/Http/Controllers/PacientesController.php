@@ -25,7 +25,7 @@ class PacientesController extends Controller
 
         $llegadas = Llegada::whereHas('programacion.medico', function ($query) use ($usuarioLogueado) {
             $query->where('id', $usuarioLogueado->id);
-        })->get();
+        })->where("pasado", 0)->get();
         return view("paginas.gestor",['llegadas' => $llegadas , 'llamados_Realizados' => $llamadosRealizados]);
     }
 

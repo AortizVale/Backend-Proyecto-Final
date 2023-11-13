@@ -25,6 +25,7 @@ Route::middleware('noCache')->group(function () {
         Route::get('gestor', [PacientesController::class, "vistaMedico"])->name('gestor')->middleware("can:gestor");
         Route::post('gestor/create', [LlamadoController::class, "store"])->name('gestor.store')->middleware("can:gestor");
         Route::post('gestor/llamar', [LlamadoController::class, "llamar_adicional"])->name('gestor.llamar')->middleware("can:gestor");
+        Route::post('gestor/pasar', [LlegadaController::class, "pasado"])->name('gestor.pasar')->middleware("can:gestor");
 
         Route::get('llamado', [PacientesController::class, "vistaLlamado"])->name('llamado')->middleware("can:llamada");
 

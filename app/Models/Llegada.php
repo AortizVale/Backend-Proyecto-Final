@@ -10,7 +10,7 @@ class Llegada extends Model
     use HasFactory;
     protected $table = 'llegadas';
     protected $primaryKey = 'cod_llegada';
-    protected $fillable = ['cod_program'];
+    protected $fillable = ['cod_program','pasado'];
 
     public function programacion()
     {

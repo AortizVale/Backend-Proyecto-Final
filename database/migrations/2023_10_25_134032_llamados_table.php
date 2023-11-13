@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('llamados', function(Blueprint $table) {
             $table->id('cod_llamado');
             $table->unsignedBigInteger('cod_llegada');
-            $table->foreign('cod_llegada')->references('cod_llegada')->on('llegadas');
+            $table->foreign('cod_llegada')->references('cod_llegada')->on('llegadas')->unique();
             $table->integer('num_llamado');
             $table->timestamps();
         });

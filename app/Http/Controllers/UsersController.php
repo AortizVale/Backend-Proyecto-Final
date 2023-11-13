@@ -26,7 +26,7 @@ class UsersController extends Controller
         $rol = Role::where('name', $request->rol)->first();
         $usuario->assignRole($rol);
 
-        return redirect()->route("login");
+        return redirect()->route("registro");
 
         //echo 'usuario creado con éxito';
         }

@@ -36,7 +36,7 @@
                                     <input type='submit' name='confirmar_llegada' id='' value='segundo llamado'>
                                 </form>
                             @else
-                                <form action='{{ route('gestor.llamar') }}' method='post'>
+                                <form action='{{ route('gestor.store') }}' method='post'>
                                     @csrf
                                     <input type='hidden' name='cod_llegada' id='' value="{{ $llegada->cod_llegada }}">
                                     <input type='submit' name='confirmar_llegada' id='' value='primer llamado'>
@@ -47,11 +47,11 @@
 
                     </div>
                     <div class='col-md-2'>
-                        <form action="" method="post">
+                        <form action='{{ route('gestor.pasar') }}' method="post">
                             @csrf
-                            <input type="hidden" name="cod_program" id=""
-                                value={{ $llegada->programacion->cod_program }}>
-                            <input type="submit" name="confirmar_llegada" id="" value="Quitar">
+                            <input type="hidden" name="cod_llegada" id=""
+                                value={{ $llegada->cod_llegada }}>
+                            <input type="submit" name="pasar" id="" value="Quitar">
                         </form>
 
                     </div>

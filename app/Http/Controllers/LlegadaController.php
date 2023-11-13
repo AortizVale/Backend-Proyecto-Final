@@ -13,11 +13,27 @@ class LlegadaController extends Controller
         // Crear el usuario
         Llegada::create([
             'cod_program' => $request->cod_program,
+            'pasado' => 0,
         ]);
 
         return redirect()->route("confirmacion");
 
         //echo 'usuario creado con éxito';
         }
+
+        public function pasado(Request $request)
+        {
     
+            $Llegada = Llegada::firstOrNew(['cod_llegada' => $request->cod_llegada]);
+    
+            // Incrementar el campo
+            $Llegada->pasado = 1;
+    
+            // Guardar el modelo
+            $Llegada->save();
+
+            return redirect()->route("gestor");
+    
+            //echo 'usuario creado con éxito';
+        }
 }

@@ -10,7 +10,7 @@ class Llamado extends Model
     use HasFactory;
     protected $table = 'llamados';
     protected $primaryKey = 'cod_llamado';
-    protected $fillable = ['cod_llegada','num_llamado'];
+    protected $fillable = ['cod_llegada','num_llamado','pasado'];
 
     public function llegada()
     {
