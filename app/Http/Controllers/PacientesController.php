@@ -43,7 +43,7 @@ class PacientesController extends Controller
             'tipo_doc' => $request->num_doc,
             'direccion' => $request->direccion,
             'fecha_nac' => $request->fecha_nac,
-            'telefono' => intval($request->telefono)
+            'telefono' => strval($request->telefono)
         ]);
 
         return redirect()->route("ingreso");

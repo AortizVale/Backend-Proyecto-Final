@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nombres',150);
             $table->string('apellidos',150);
             $table->string('correo',100);
-            $table->integer('telefono');
+            $table->string('telefono');
             $table->text('direccion');
             $table->date('fecha_nac');
             $table->timestamps();
