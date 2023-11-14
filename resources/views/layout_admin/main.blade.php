@@ -58,7 +58,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="mx-2 d-flex">
                         @if (auth()->check())
-                            <p>Bienvenid@, {{ auth()->user()->nombres }} {{ auth()->user()->apellidos }} </p>
+                            <p>Hola, {{ auth()->user()->nombres }} {{ auth()->user()->apellidos }} </p>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
