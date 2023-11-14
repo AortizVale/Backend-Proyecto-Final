@@ -21,6 +21,7 @@
                 <img src="{{ asset('img/logo_optica.png') }}" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="me-auto"></div>
                 @if (auth()->check())
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -78,7 +79,7 @@
                                 Cerrar Sesión
                             </a>
                         @else
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end" >
                                 <a class="btn btn-primary rounded-sm px-4 py-2 nav-link active mx-2"
                                     aria-current="page" href="{{ route('login') }}">Ingresar</a> 
                             </div>

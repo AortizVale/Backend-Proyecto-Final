@@ -100,7 +100,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
                                         required>
-                                    <label class="form-check-label">Yo confirmo que mis datos son validos y
+                                    <label class="form-check-label">Confirmo que los datos son validos y
                                         correctos.</label>
                                     <div class="invalid-feedback">Por favor confirma que tus datos son validos y correctos.
                                     </div>

@@ -15,7 +15,7 @@
 <body>
     <div>
         <div class="d-flex justify-content-center">
-            <img src="img/cuadro.png" class="h-20 w-40" >
+            <img src="img/cuadro.png" class="h-auto w-50" >
         </div>
     </div>
 
