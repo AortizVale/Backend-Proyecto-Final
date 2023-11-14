@@ -72,7 +72,7 @@
                                     href="{{ route('registro') }}">Registrar Usuario</a>
                             @endcan
 
-                            <a class="btn btn-primary rounded-sm px-4 py-2 nav-link active" aria-current="page"
+                            <a class="btn btn-primary rounded-sm px-4 mx-2 py-2 nav-link active" aria-current="page"
                                 href="#"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Cerrar Sesión
