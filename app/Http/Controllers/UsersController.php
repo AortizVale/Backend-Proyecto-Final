@@ -26,7 +26,7 @@ class UsersController extends Controller
         $rol = Role::where('name', $request->rol)->first();
         $usuario->assignRole($rol);
 
-        return redirect()->route("registro");
+        return redirect()->route("home");
 
         //echo 'usuario creado con éxito';
         }
@@ -45,7 +45,7 @@ class UsersController extends Controller
             // Intentar autenticar al usuario
             if (Auth::attempt($credentials)) {
                 // Si las credenciales son correctas, redirige al usuario a su área privada
-                return redirect()->route('llamado');
+                return redirect()->route('home');
             }
         
             // Si las credenciales son incorrectas, muestra un mensaje de error y redirige de nuevo al formulario de inicio de sesión
