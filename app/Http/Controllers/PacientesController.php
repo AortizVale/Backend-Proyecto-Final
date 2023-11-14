@@ -48,12 +48,15 @@ class PacientesController extends Controller
 
     public function vistaConfirmacion()
 {
+    // Obtener la fecha actual
+    $fechaActual = now()->toDateString();
     // Obtener los cod_program de llegadas
     $codigosLlegadas = Llegada::pluck('cod_program')->toArray();
 
     // Obtener programaciones que no estén en llegadas
     $programaciones = Programacion::with('medico', 'paciente', 'consultorio')
         ->whereNotIn('cod_program', $codigosLlegadas)
+        ->where('fecha', $fechaActual)
         ->get();
 
     return view("paginas.conf_llamada", ['programaciones' => $programaciones]);

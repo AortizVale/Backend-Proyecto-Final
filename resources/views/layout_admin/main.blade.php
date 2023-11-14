@@ -31,11 +31,11 @@
                             </a>
                             <ul class="dropdown-menu">
                                 @can('ingreso')
-                                    <li><a class="dropdown-item" href="{{ route('ingreso') }}">Ingreso de Pacientes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('ingreso') }}">Registro de pacientes</a></li>
                                 @endcan
                                 @can('programacion')
                                     <li><a class="dropdown-item" href="{{ route('programacion') }}">Programacion de
-                                            horarios</a>
+                                            citas</a>
                                     </li>
                                 @endcan
                                 @can('confirmacion')
@@ -43,10 +43,10 @@
                                     </li>
                                 @endcan
                                 @can('gestor')
-                                    <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('gestor') }}">Llamar a pacientes</a></li>
                                 @endcan
                                 @can('llamada')
-                                    <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('llamado') }}">Pantalla de llamados</a></li>
                                 @endcan
                                 @can('consultorio')
                                     <li><a class="dropdown-item" href="{{ route('consultorio.create') }}">Creación de
