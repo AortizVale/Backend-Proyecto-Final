@@ -20,18 +20,29 @@ class PacientesController extends Controller
 
     public function vistaMedico()
     {
+        $fechaActual = now()->toDateString();
+
         $llamadosRealizados = Llamado::pluck('cod_llegada')->toArray();
         $usuarioLogueado = Auth::user();
 
         $llegadas = Llegada::whereHas('programacion.medico', function ($query) use ($usuarioLogueado) {
             $query->where('id', $usuarioLogueado->id);
-        })->where("pasado", 0)->get();
+        })->whereHas('programacion', function ($query) use ($fechaActual) {
+            $query->where('fecha', $fechaActual);
+        })
+        ->where("pasado", 0)->get();
         return view("paginas.gestor",['llegadas' => $llegadas , 'llamados_Realizados' => $llamadosRealizados]);
     }
 
     public function vistaLlamado()
     {
-        $llamados = Llamado::with('llegada')->orderBy('updated_at','desc')->get();
+        $fechaActual = now()->toDateString();
+
+        $llamados = Llamado::with('llegada')->orderBy('updated_at','desc')
+            ->whereHas('llegada.programacion', function ($query) use ($fechaActual) {
+            $query->where('fecha', $fechaActual);
+        })->
+        get();
             return view("paginas.llamado", ['llamados' => $llamados]);
     }
 
