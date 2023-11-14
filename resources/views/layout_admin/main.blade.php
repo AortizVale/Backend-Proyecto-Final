@@ -21,70 +21,79 @@
                 <img src="{{ asset('img/logo_optica.png') }}" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu">
-                            @can('ingreso')
-                                <li><a class="dropdown-item" href="{{ route('ingreso') }}">Ingreso de Pacientes</a></li>
-                            @endcan
-                            @can('programacion')
-                                <li><a class="dropdown-item" href="{{ route('programacion') }}">Programacion de horarios</a>
-                                </li>
-                            @endcan
-                            @can('confirmacion')
-                                <li><a class="dropdown-item" href="{{ route('confirmacion') }}">Confirmar Llegada</a></li>
-                            @endcan
-                            @can('gestor')
-                                <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
-                            @endcan
-                            @can('llamada')
-                                <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
-                            @endcan
-                            @can('consultorio')
-                                <li><a class="dropdown-item" href="{{ route('consultorio.create') }}">Creación de
-                                        Consultorios</a></li>
-                            @endcan
-                            {{-- <li>
+                @if (auth()->check())
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                @can('ingreso')
+                                    <li><a class="dropdown-item" href="{{ route('ingreso') }}">Ingreso de Pacientes</a></li>
+                                @endcan
+                                @can('programacion')
+                                    <li><a class="dropdown-item" href="{{ route('programacion') }}">Programacion de
+                                            horarios</a>
+                                    </li>
+                                @endcan
+                                @can('confirmacion')
+                                    <li><a class="dropdown-item" href="{{ route('confirmacion') }}">Confirmar Llegada</a>
+                                    </li>
+                                @endcan
+                                @can('gestor')
+                                    <li><a class="dropdown-item" href="{{ route('gestor') }}">Gestor de Pacientes</a></li>
+                                @endcan
+                                @can('llamada')
+                                    <li><a class="dropdown-item" href="{{ route('llamado') }}">Llamado de Pacientes</a></li>
+                                @endcan
+                                @can('consultorio')
+                                    <li><a class="dropdown-item" href="{{ route('consultorio.create') }}">Creación de
+                                            Consultorios</a></li>
+                                @endcan
+                                {{-- <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
-                        </ul>
-                    </li>
-                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+                @endif
                 <div class="d-flex justify-content-center">
                     <div class="mx-2 d-flex">
                         @if (auth()->check())
-                            <p>Hola, {{ auth()->user()->nombres }} {{ auth()->user()->apellidos }} </p>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <p class="">Bienvenido, {{ auth()->user()->nombres }} {{ auth()->user()->apellidos }} </p>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
                                 @csrf
                             </form>
                             @can('registrar')
-                                <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active mx-2" aria-current="page"
+                                <a class="btn btn-primary rounded-sm px-4 py-2 nav-link active mx-2" aria-current="page"
                                     href="{{ route('registro') }}">Registrar Usuario</a>
                             @endcan
 
-                            <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active" aria-current="page"
+                            <a class="btn btn-primary rounded-sm px-4 py-2 nav-link active" aria-current="page"
                                 href="#"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Cerrar Sesión
                             </a>
                         @else
-                        <a class="btn btn-primary rounded-sm px-4 py-1 nav-link active mx-2" aria-current="page"
-                            href="{{ route('login') }}">Ingresar</a>
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-primary rounded-sm px-4 py-2 nav-link active mx-2"
+                                    aria-current="page" href="{{ route('login') }}">Ingresar</a> 
+                            </div>
                         @endif
 
-                        
+
 
                     </div>
                 </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                @if (auth()->check())
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                @endif
             </div>
         </div>
     </nav>
