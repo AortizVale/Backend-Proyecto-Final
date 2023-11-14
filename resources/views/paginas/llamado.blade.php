@@ -7,14 +7,14 @@
             <li class="nav-item">
                 <div class="container-fluid ">
                     <a class="navbar-brand center" href="#">
-                        
+
                     </a>
                 </div>
             </li>
         </ul>
         <br>
         <div class="container">
-            
+
             <div class="row">
 
                 <div class="col-md-7">
@@ -27,12 +27,32 @@
                             </tr>
                         </thead>
                         <tbody class="crecer-uno">
-                            
+                            @foreach ($llamados as $llamado)
+                            @if ($llamado->num_llamado == 1) 
+                            @php
+                                $class = "table-warning"
+                            @endphp
+                            @elseif ($llamado->num_llamado == 2)
+                            @php
+                            $class = "table-warning"
+                            @endphp
+                            @else
+                            @php
+                            $class = "table-danger"
+                            @endphp
+                                
+                            @endif
+                            <tr class="crecer-letra {{$class}}">
+                                <td scope="col">{{ $llamado->llegada->programacion->paciente->nombres }} {{ $llamado->llegada->programacion->paciente->apellidos }}</td>
+                                <td scope="col">{{ $llamado->llegada->programacion->consultorio->nombre }}</td>
+                                <td scope="col">{{ $llamado->llegada->programacion->medico->nombres }} {{ $llamado->llegada->programacion->medico->apellidos }}</td>
+                            </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-5">
-
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="true">
                         <div class="carousel-inner">
                             <div class="carousel-item active">

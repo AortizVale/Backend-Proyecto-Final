@@ -31,7 +31,8 @@ class PacientesController extends Controller
 
     public function vistaLlamado()
     {
-            return view("paginas.llamado");
+        $llamados = Llamado::with('llegada')->orderBy('updated_at','desc')->get();
+            return view("paginas.llamado", ['llamados' => $llamados]);
     }
 
     public function vistaProgramacion()
