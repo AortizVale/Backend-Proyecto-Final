@@ -21,7 +21,7 @@
                 <img src="{{ asset('img/logo_optica.png') }}" alt="Bootstrap", width="150">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="me-auto"></div>
+                
                 @if (auth()->check())
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -59,6 +59,8 @@
                             </ul>
                         </li>
                     </ul>
+                @else
+                <div class="me-auto"></div>
                 @endif
                 <div class="d-flex justify-content-center">
                     <div class="mx-2 d-flex">
